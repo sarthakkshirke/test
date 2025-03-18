@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 import pandas as pd
 import pdfplumber
-import docx
+import Document
 import re
 import json
 import logging
@@ -229,7 +229,7 @@ def extract_text_from_resume(uploaded_file) -> str:
             with pdfplumber.open(uploaded_file) as pdf:
                 text = "\n".join(page.extract_text() or "" for page in pdf.pages)
         elif uploaded_file.name.endswith(".docx"):
-            doc = docx.Document(uploaded_file)
+            doc = Document(uploaded_file)
             text = "\n".join(para.text for para in doc.paragraphs)
         else:
             raise ValueError("Unsupported file format. Only PDF and DOCX are supported.")

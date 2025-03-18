@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 import pandas as pd
 import pdfplumber
-import Document
+from document import Document
 import re
 import json
 import logging

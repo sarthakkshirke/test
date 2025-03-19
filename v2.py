@@ -646,7 +646,7 @@ def main():
     st.set_page_config(layout="wide", page_title="PL/CL Evaluation System")
     
     try:
-        data = load_data("KB.xlsx")        
+        data = load_data("PL_Ratings123.xlsx")        
         display_ui(data)
     except Exception as e:
         st.error(f"An error occurred: {str(e)}")
